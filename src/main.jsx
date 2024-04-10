@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ContextComponent>
       <RouterProvider router={router} />
-      <ToastContainer />
+      <ToastContainer></ToastContainer>
     </ContextComponent>
   </React.StrictMode>,
 )

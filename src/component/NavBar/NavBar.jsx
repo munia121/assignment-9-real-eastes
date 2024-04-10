@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
-import { updateProfile } from "firebase/auth";
-import auth from "../../firebase.config";
+
 
 
 const NavBar = () => {
@@ -19,7 +18,7 @@ const NavBar = () => {
             })
     }
     
-    
+
 
 
 
