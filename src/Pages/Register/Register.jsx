@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
@@ -11,12 +12,13 @@ const Register = () => {
         
         const name = e.target.name.value;
         const email = e.target.email.value;
+        const photo = e.target.photoUrl.value;
         const password = e.target.password.value
 
         console.log('register', name, email, password)
 
 
-        createUser(email, password)
+        createUser(email, password,photo)
         .then(result=>{
             console.log(result.user)
         })
@@ -56,7 +58,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name="url" placeholder="URL" className="input input-bordered"  />
+                                <input type="text" name="photoUrl" placeholder="URL" className="input input-bordered"  />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -68,6 +70,8 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>
+
+                            <p>Have you any account <Link className="text-sky-500 underline" to={'/login'}>Login</Link></p>
                         </form>
                     </div>
                 </div>

@@ -1,15 +1,17 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
 
-    const { userLogin } = useContext(AuthContext)
+    const { userLogin, googleLogin } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        
+
         const email = e.target.email.value;
         const password = e.target.password.value
 
@@ -23,7 +25,19 @@ const Login = () => {
             .catch(error => {
                 console.log(error)
             })
+        
 
+    }
+
+    const googleHandle = () =>{
+        googleLogin()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    
     }
 
     return (
@@ -54,6 +68,12 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+
+
+                            <div className="mt-6">
+                                <p onClick={googleHandle} className="text-sky-500 underline">Google</p>
+                            </div>
+                            <p>Don't you have an account <Link className="text-sky-400 underline" to={'/register'}>Register now</Link></p>
                         </form>
                     </div>
                 </div>
