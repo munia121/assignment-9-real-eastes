@@ -58,6 +58,7 @@ const ContextComponent = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
             console.log('user in tha state changed', currentUser);
             setUser(currentUser);
+            setLoading(false);
             
         })
         return () =>{
@@ -67,7 +68,7 @@ const ContextComponent = ({ children }) => {
 
 
 
-    const passValue = { user,userData,createUser, userLogin, googleLogin,logOut, gitHubLogin }
+    const passValue = { user,userData,loading,createUser, userLogin, googleLogin,logOut, gitHubLogin }
 
     return (
         <div>
