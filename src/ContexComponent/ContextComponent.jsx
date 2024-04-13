@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase.config";
 
@@ -26,6 +26,14 @@ const ContextComponent = ({ children }) => {
     }
 
 
+    // github
+    const gitHubProvider = new GithubAuthProvider();
+    const gitHubLogin = () =>{
+        return signInWithPopup(auth, gitHubProvider)
+    }
+
+
+
     // log out 
 
     const logOut = () =>{
@@ -50,7 +58,7 @@ const ContextComponent = ({ children }) => {
 
 
 
-    const passValue = { user,createUser, userLogin, googleLogin,logOut }
+    const passValue = { user,createUser, userLogin, googleLogin,logOut, gitHubLogin }
 
     return (
         <div>

@@ -17,7 +17,7 @@ const NavBar = () => {
                 console.log(error)
             })
     }
-    
+
 
 
 
@@ -42,7 +42,7 @@ const NavBar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl">daisyUI</a>
+                <a className="btn btn-ghost text-3xl">Home Haven</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-5 px-1">
@@ -53,7 +53,9 @@ const NavBar = () => {
                 {
                     user ?
                         <>
-                            <img className="rounded-full h-10 w-10" src={user.photoURL} alt="" />
+                            <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                                <img className={`rounded-full h-10 w-10  `} src={user.photoURL} alt="" />
+                            </div>
                             <button className="btn" onClick={handleSignOut}>Log out</button>
                         </>
                         :

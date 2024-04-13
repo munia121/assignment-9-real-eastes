@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Cozy Single Family Home",
+      "segment_name": "residential",
+      "description": "This charming single-family home boasts a warm and inviting atmosphere, featuring spacious living areas and a large backyard perfect for outdoor gatherings and relaxation. Located in a family-friendly neighborhood, this home offers comfort and convenience for everyday living.",
+      "price": 250000,
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Suburban",
+      "facilities": ["living room", "backyard", "garage"],
+      "image_url": "https://i.ibb.co/gRnP9xm/gettyimages-175505035-612x612.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Modern Townhouse",
+      "segment_name": "residential",
+      "description": "Step into modern luxury with this sleek townhouse, offering stylish design and contemporary living spaces. Situated in a vibrant neighborhood, this home provides easy access to urban amenities while providing a peaceful retreat for modern living.",
+      "price": 180000,
+      "status": "sale",
+      "area": "1600 sq ft",
+      "location": "Urban",
+      "facilities": ["living room", "balcony", "garage"],
+      "image_url": "https://i.ibb.co/vVShkWm/modern-townhouse-design-house-168058-939.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Downtown Apartment",
+      "segment_name": "residential",
+      "description": "Live in luxury in this spacious downtown apartment, boasting stunning city views and modern amenities. With its central location, this apartment offers convenience and accessibility to dining, shopping, and entertainment options, making it the perfect urban oasis for cosmopolitan living.",
+      "price": 1200,
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Urban",
+      "facilities": ["living room", "gym", "swimming pool"],
+      "image_url": "https://i.ibb.co/BZpt6Qh/modern-downtown-condominiums-apartment-offices-building-thick-vegetation-32570442.webp"
+    },
+    {
+      "id": 4,
+      "estate_title": "Student Housing Near Campus",
+      "segment_name": "residential",
+      "description": "Experience the ultimate in student living with this spacious housing option just a short walk from campus. Featuring comfortable living spaces and a vibrant community atmosphere, this residence offers convenience and connectivity for students seeking the ideal college experience.",
+      "price": 2000,
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Urban",
+      "facilities": ["bedroom", "study area", "laundry room"],
+      "image_url": "https://i.ibb.co/3WfP2Yx/studenthousing1.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Senior Living Community",
+      "segment_name": "residential",
+      "description": "Discover comfort and convenience in this senior living community, offering a range of amenities and services tailored to the needs of older adults. With spacious accommodations and engaging activities, this community provides a supportive environment for vibrant and active senior living.",
+      "price": 3500,
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Suburban",
+      "facilities": ["living room", "dining hall", "fitness center"],
+      "image_url": "https://i.ibb.co/RphFcQ7/experience-senior-living-communities-sancerre-orange-city-exterior-close.webp"
+    },
+    {
+      "id": 6,
+      "estate_title": "Beachfront Vacation Rental",
+      "segment_name": "residential",
+      "description": "Escape to paradise with this beachfront vacation rental, featuring breathtaking ocean views and luxurious amenities. Whether you're seeking relaxation or adventure, this villa offers the perfect setting for a memorable seaside getaway with family and friends.",
+      "price": 500,
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Coastal",
+      "facilities": ["living room", "pool", "beach access"],
+      "image_url": "https://i.ibb.co/fpG6PXY/Header-The-Most-Expensive-Beachfront-Vacation-Rental-in-Every-Country.jpg"
+    },
+    {
+      "id": 7,
+      "estate_title": "Mountain Retreat Cabin",
+      "segment_name": "residential",
+      "description": "Experience tranquility in this cozy mountain retreat, nestled amidst picturesque landscapes and serene surroundings. With its rustic charm and modern comforts, this cabin provides the perfect escape for nature lovers seeking relaxation and rejuvenation in the great outdoors.",
+      "price": 150000,
+      "status": "sale",
+      "area": "1200 sq ft",
+      "location": "Rural",
+      "facilities": ["living room", "fireplace", "deck"],
+      "image_url": "https://i.ibb.co/3ctZThp/mountain-retreat.jpg"
+    },
+    {
+      "id": 8,
+      "estate_title": "Duplex Investment Property",
+      "segment_name": "residential",
+      "description": "Invest in your future with this income-generating duplex property, offering dual living spaces and a steady rental income stream. With tenants already in place, this property provides a hassle-free investment opportunity for savvy investors looking to build wealth through real estate.",
+      "price": 220000,
+      "status": "sale",
+      "area": "1500 sq ft (each unit)",
+      "location": "Urban",
+      "facilities": ["living room", "parking space", "backyard"],
+      "image_url": "https://i.ibb.co/vV13Vnd/Internal-Image-Invest-in-a-Duplex-Southcoast-Isla-255-Rear-Exterior.jpg"
+    },
+    {
+      "id": 9,
+      "estate_title": "City Condominium",
+      "segment_name": "residential",
+      "description": "Live in style in this chic city condominium, boasting modern design and panoramic city views. With its prime urban location and upscale amenities, this condominium offers the ultimate in city living for discerning individuals seeking sophistication and convenience.",
+      "price": 180000,
+      "status": "sale",
+      "area": "1200 sq ft",
+      "location": "Urban",
+      "facilities": ["living room", "gym", "concierge service"],
+      "image_url": "https://i.ibb.co/h2yZCJw/original-cf84fedac4329fb69b2159de015c026f.jpg"
+    }
+  ]
+  

@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -8,7 +10,6 @@ const Register = () => {
     const {createUser} = useContext(AuthContext);
  
     const [passError, setPassError] = useState('');
-    const [success, setSuccess] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -51,6 +52,7 @@ const Register = () => {
         .then(result=>{
             console.log(result.user)
             e.target.reset()
+            toast.success('Register Successfully')
         })
         .catch(error =>{
             console.log(error)
@@ -59,15 +61,19 @@ const Register = () => {
     }
 
 
+    
+
+
+
     return (
         <div>
             <div className="hero   min-h-screen">
                 <div className="hero-content flex-col ">
                     <div className="text-center ">
-                        <h1 className="lg:text-5xl font-bold">Register Form</h1>
+                        <h1 className="md:text-5xl  font-bold">Register Form</h1>
 
                     </div>
-                    <div className="w-full card lg:w-[800px] mx-auto mt-10   shadow-2xl bg-base-100">
+                    <div className="w-full card md:w-[800px] mx-auto mt-10   shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* ******** */}
                             <div className="form-control">
@@ -104,6 +110,7 @@ const Register = () => {
                             </div>
 
                             <p>Have you any account <Link className="text-sky-500 underline" to={'/login'}>Login</Link></p>
+
                         </form>
                     </div>
                 </div>

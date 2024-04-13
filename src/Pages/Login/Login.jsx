@@ -5,15 +5,20 @@ import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+
+
 
 
 
 
 const Login = () => {
 
-    const { userLogin, googleLogin } = useContext(AuthContext);
+    const { userLogin, googleLogin, gitHubLogin } = useContext(AuthContext);
    
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,22 +30,23 @@ const Login = () => {
         console.log('login', email, password)
 
 
-        // if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
-        //     setPassError('Invalid password')
-        // }
+        if(!password){
+            setError('Invalid password')
+        }
 
 
-
+        setError('')
         
 
         userLogin(email, password)
             .then(result => {
                 console.log(result.user)
                 e.target.reset()
+                toast.success('Login success')
                
             })
             .catch(error => {
-                console.log(error)
+                setError(error.message)
             })
 
     }
@@ -59,10 +65,22 @@ const Login = () => {
     }
 
 
-    // const btn = () =>{
-    //     console.log('kajdfg')
-    //     toast.success('kadjh')
-    // }
+    const gitHubHandle = () => {
+        gitHubLogin()
+            .then(result => {
+                console.log(result.user)
+                
+            })
+            .catch(error => {
+                console.log(error)
+
+            })
+
+    }
+
+
+    console.log(error)
+    console.log('sdkghag')
 
 
     return (
@@ -99,6 +117,9 @@ const Login = () => {
                                     }
 
                                 </span>
+                                {
+                                    error && <p className="text-red-600">{error}</p>
+                                }
                                 
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
@@ -109,13 +130,24 @@ const Login = () => {
                             </div>
                             
                            
-                            <div className="mt-6">
-                                <p onClick={googleHandle} className="text-sky-500 underline">Google</p>
+                            <p>Don't you have an account? <Link className="text-sky-400 underline" to={'/register'}>Register now</Link></p>
+                            <div className="flex gap-4 items-center justify-between mt-10">
+                                    
+                                <p className="w-full h-0.5 bg-black"></p>
+                                <p>or</p>
+                                <p className="w-full h-0.5 bg-black"></p>
+                                    
                             </div>
-                            <p>Don't you have an account <Link className="text-sky-400 underline" to={'/register'}>Register now</Link></p>
+                            <div className="mt-6 mx-auto flex gap-8">
+                                <p onClick={googleHandle} className=" bg-black px-4 rounded-md py-2">
+                                    <FcGoogle size={30}></FcGoogle>
+                                </p>
 
+                                <p onClick={gitHubHandle} className="px-4 py-2 rounded-md border">
+                                    <FaGithub size={30}></FaGithub>
+                                </p>
+                            </div>
                         </form>
-                        <button className="btn">tost</button>
                     </div>
                 </div>
             </div>
