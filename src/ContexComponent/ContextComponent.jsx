@@ -6,6 +6,8 @@ import auth from "../firebase.config";
 export const AuthContext = createContext(null)
 const ContextComponent = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [userData, setUserData] = useState([]);
+    const [loading, setLoading] = useState(true)
 
 
     const createUser = (email, password) => {
@@ -42,6 +44,13 @@ const ContextComponent = ({ children }) => {
 
 
 
+    useEffect(() =>{
+        fetch('/data.json')
+        .then(res=>res.json())
+        .then(data=>setUserData(data))
+    },[])
+
+
      
     // onAuthStateChange
     useEffect(()=>{
@@ -58,7 +67,7 @@ const ContextComponent = ({ children }) => {
 
 
 
-    const passValue = { user,createUser, userLogin, googleLogin,logOut, gitHubLogin }
+    const passValue = { user,userData,createUser, userLogin, googleLogin,logOut, gitHubLogin }
 
     return (
         <div>
