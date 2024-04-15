@@ -70,7 +70,7 @@ const Home = () => {
 
             <section>
                 <div>
-                    <h1 className='text-center lg:text-5xl md:text-3xl text-2xl font-bold mt-20 animate__animated animate__bounceInDown'>LATEST NEWS</h1>
+                    <h1 className='text-center text-pink-700 lg:text-5xl md:text-3xl text-2xl font-bold mt-20 animate__animated animate__bounceInDown'>LATEST NEWS</h1>
                     <p className='lg:w-[900px] mx-auto text-center p-4'>In the residential real estate realm, demand for single-family homes persists amidst rising interest rates. Sustainability gains traction, while remote work influences home preferences. Affordable housing challenges persist alongside a thriving luxury market. Suburban areas see increased demand, and tech integration transforms homes. Investors seek diversification amid evolving trends.</p>
                 </div>
             </section>

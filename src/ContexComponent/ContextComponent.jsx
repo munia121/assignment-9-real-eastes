@@ -28,6 +28,7 @@ const ContextComponent = ({ children }) => {
 
     // login 
     const userLogin = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email, password)
     }
 
@@ -35,13 +36,16 @@ const ContextComponent = ({ children }) => {
     // google 
     const googleProvider = new GoogleAuthProvider();
     const googleLogin = () =>{
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
 
     // github
     const gitHubProvider = new GithubAuthProvider();
+    // gitHubProvider.addScope('user:email')
     const gitHubLogin = () =>{
+        setLoading(true)
         return signInWithPopup(auth, gitHubProvider)
     }
 
@@ -50,6 +54,7 @@ const ContextComponent = ({ children }) => {
     // log out 
 
     const logOut = () =>{
+        setLoading(true)
         return signOut(auth)
     }
 

@@ -39,18 +39,18 @@ const UpdateProfile = () => {
                 <title>updateProfile</title>
             </Helmet>
             <h2 className="text-4xl mt-20 text-center font-bold">Update Your Profile</h2>
-            <div className=" border mt-10 p-8 lg:w-[800px] mx-auto">
+            <div className="border border-pink-700 rounded-lg mt-10 p-8 lg:w-[800px] mx-auto">
                 <form onSubmit={updateSubmit} className="">
                 <p className="text-xl">Email</p>
-                    <input type="text" name="name" placeholder="Email" className="input input-bordered input-primary w-full " defaultValue={user?.email } />
+                    <input type="text" name="name" placeholder="Email" className="input input-bordered  w-full " defaultValue={user?.email } />
 
 
                     <p className="text-xl mt-5">Name</p>
-                    <input type="text" name="name" placeholder="Name" className="input input-bordered input-primary w-full " defaultValue={user?.displayName }/>
+                    <input type="text" name="name" placeholder="Name" className="input input-bordered  w-full " defaultValue={user?.displayName }/>
 
                     <p className="mt-6 text-xl">Photo</p>
-                    <input type="text" name="photoUrl" placeholder="photoUrl" className="input input-bordered input-primary w-full " defaultValue={user?.photoURL } />
-                    <button className="btn mt-5  w-full">Update</button>
+                    <input type="text" name="photoUrl" placeholder="photoUrl" className="input input-bordered w-full " defaultValue={user?.photoURL } />
+                    <button className="btn mt-5 bg-pink-600 text-white text-lg  w-full">Update</button>
                 </form>
             </div>
         </div>

@@ -20,25 +20,27 @@ const CardDetails = () => {
             
             <div className="hero ">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={data.image_url} className="lg:w-[700px] rounded-lg shadow-2xl " />
+                    <img data-aos="zoom-in" data-aos-duration= "1000" src={data.image_url} className="lg:w-[700px] rounded-lg shadow-2xl " />
                     <div>
-                        <h1 className="text-3xl font-bold">{data.estate_title}</h1>
-                        <p className="py-6">{data.description}</p>
-                        <p><span className="font-bold">Segment- </span>{data.segment_name}</p>
-                        <div className="flex  gap-20 mt-4">
-                            <p><span className="font-bold">Price:</span> {data.price}</p>
-                            <p className="font-bold">{data.status}</p>
+                        <h1  className="animate__animated animate__rotateInDownLeft text-3xl font-bold">{data.estate_title}</h1>
+                        <p className="py-6 animate__animated  animate__zoomIn  animate__delay-1s"  >{data.description}</p>
+                        <hr />
+                        <p className="font-bold mt-3 animate__animated  animate__zoomIn  animate__delay-2s" ><span className="font-bold text-pink-700 ">Segment- </span>{data.segment_name}</p>
+                        <div className="flex  gap-20 mt-4  animate__animated  animate__zoomIn  animate__delay-3s">
+                            <p className="font-bold"><span className="font-bold text-pink-700">Price:</span> {data.price}</p>
+                            <p className="font-bold "><span className="text-pink-700">Status:</span> {data.status}</p>
                         </div>
-                        <div className="mt-3 flex gap-20">
-                            <p><span className="font-bold">Area: </span> {data.area}</p>
-                            <p><span className="font-bold">location: </span> {data.location}</p>
+                        <div className="mt-3 flex gap-20 animate__animated  animate__zoomIn  animate__delay-4s">
+                            <p className="font-bold "><span className="font-bold text-pink-700">Area: </span> {data.area}</p>
+                            <p className="font-bold mb-3"><span className="font-bold text-pink-700">location: </span> {data.location}</p>
                         </div>
-                        <div className="mt-2">
-                            Facilities:{
+                        <hr />
+                        <div className="mt-2 animate__animated  animate__zoomIn  animate__delay-5s">
+                            <span className="font-bold">Facilities:</span>{
                                 data.facilities.map(a=> <li>{a}</li>)
                             }
+                        <Link to={'/'}><button className="btn btn-sm mt-2 bg-pink-600 text-white">Go Back</button></Link>
                         </div>
-                        <Link to={'/'}><button className="btn btn-sm mt-2 btn-primary">Go Back</button></Link>
                     </div>
                 </div>
             </div>

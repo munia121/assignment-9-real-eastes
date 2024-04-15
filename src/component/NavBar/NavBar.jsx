@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
+import { toast } from "react-toastify";
 
 
 
 const NavBar = () => {
-    const { logOut, user } = useContext(AuthContext);
+    const { logOut, user, loading} = useContext(AuthContext);
 
 
+    
     const handleSignOut = () => {
         logOut()
             .then(result => {
                 console.log(result.user)
             })
             .catch(error => {
+                toast.success('User Log out')
                 console.log(error)
             })
     }
@@ -23,16 +26,18 @@ const NavBar = () => {
 
 
     const navLinks = <>
-        <li><NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-bold  rounded-md ' : 'font-bold text-black'} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} to={'/'}>Home</NavLink></li>
 
-        <li><NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-bold  rounded-md ' : 'font-bold text-black'} to={'/updateProfile'}>Update Profile</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} to={'/updateProfile'}>Update Profile</NavLink></li>
+
+        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} to={'/about'}>Contact Us</NavLink></li>
 
         {/* <li><NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-bold  rounded-md ' : 'font-bold text-black'} to={'/register'}>Register</NavLink></li> */}
 
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar rounded-lg shadow-lg border mt-10 px-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +47,7 @@ const NavBar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl">Home Haven</a>
+                <a className="btn btn-ghost gap-0 text-3xl">Home<span className="text-pink-700">Haven</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-5 px-1">
@@ -57,10 +62,10 @@ const NavBar = () => {
                                 <img className={`rounded-full h-10 w-10  `} src={user?.photoURL || 'https://ibb.co/WxjPyWc'} alt="" />
                                 
                             </div>
-                            <button className="btn ml-6" onClick={handleSignOut}>Log out</button>
+                            <button className="btn ml-6 bg-pink-600 text-white" onClick={handleSignOut}>Log out</button>
                         </>
                         :
-                        <Link to={'/login'} className="btn">Login</Link>
+                        <Link to={'/login'} className="btn bg-pink-600 text-white">Login</Link>
                 }
             </div>
         </div>

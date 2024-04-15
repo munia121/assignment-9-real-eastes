@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -20,7 +20,8 @@ const Login = () => {
    
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -45,11 +46,13 @@ const Login = () => {
                 console.log(result.user)
                 e.target.reset()
                 toast.success('Login success')
-                navigate('/')
+                navigate(location?.state? location.state: '/')
                
             })
+            // eslint-disable-next-line no-unused-vars
             .catch(error => {
-                setError(error.message)
+                setError('invalid password')
+                toast.warn("Invalid password")
             })
 
     }
@@ -58,6 +61,7 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state? location.state: '/')
                 
             })
             .catch(error => {
@@ -72,6 +76,7 @@ const Login = () => {
         gitHubLogin()
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state? location.state: '/')
                 
             })
             .catch(error => {
@@ -91,29 +96,29 @@ const Login = () => {
             <Helmet>
                 <title>Login Page</title>
             </Helmet>
-            <div className="hero  min-h-screen">
+            <div className="hero  min-h-screen ">
                 <div className=" flex-col ">
                     <div className="text-center ">
                         <h1 className="lg:text-5xl font-bold">Login now!</h1>
                     </div>
-                    <div className="w-full mt-4 lg:mt-10 lg:w-[800px] mx-auto   shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit} className="card-body">
+                    <div className="w-full mt-4 lg:mt-10 lg:w-[800px] mx-auto bg-base-100">
+                        <form onSubmit={handleSubmit} className="rounded-lg card-body border-pink-700 border">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text text-xl">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text text-xl">Password</span>
                                 </label>
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder="password"
                                     className="input input-bordered" required />
-                                <span className="absolute ml-48 mt-12 lg:ml-[660px]" onClick={() => setShowPassword(!showPassword)}>
+                                <span className="absolute ml-48 mt-14 lg:ml-[660px]" onClick={() => setShowPassword(!showPassword)}>
 
                                     {
                                         showPassword ? <FaRegEye size={30}></FaRegEye> :
@@ -132,11 +137,11 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-pink-600 text-white text-lg">Login</button>
                             </div>
                             
                            
-                            <p>Don't you have an account? <Link className="text-sky-400 underline" to={'/register'}>Register now</Link></p>
+                            <p>Don't you have an account? <Link className="text-pink-700 underline" to={'/register'}>Register now</Link></p>
                             <div className="flex gap-4 items-center justify-between mt-10">
                                     
                                 <p className="w-full h-0.5 bg-black"></p>

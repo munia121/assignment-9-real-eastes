@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <footer className="p-6 mt-20 bg-gray-800 text-gray-100">
                 <div>
-                    <h1 className="text-3xl text-center">HomeHaven</h1>
+                    <h1 className="text-3xl gap-0 text-center">Home<span className="text-pink-700">Haven</span></h1>
                 </div>
                 <div className="container mt-10 grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
                     <div className="flex flex-col space-y-4">
@@ -64,7 +64,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex items-center justify-center px-6 pt-12 text-sm">
-                    <span className="text-gray-400">© Copyright 1986. All Rights Reserved.</span>
+                    <span className="text-pink-700">© Copyright 1986. All Rights Reserved.</span>
                 </div>
             </footer>
         </div>
