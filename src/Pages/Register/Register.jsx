@@ -1,25 +1,26 @@
+/* eslint-disable react/prop-types */
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
- 
+    const { createUser,updateUserProfile,setAutoUpdate } = useContext(AuthContext);
+
     const [passError, setPassError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         const name = e.target.name.value;
         const email = e.target.email.value;
         const photo = e.target.photoUrl.value;
         const password = e.target.password.value
 
-        console.log('register', name, email, password)
+        console.log('register:', name, email, password, photo)                                        
 
 
 
@@ -28,13 +29,13 @@ const Register = () => {
             return;
         }
 
-        
+
         if (!/[a-z]/.test(password)) {
             setPassError('Must have a Lowercase lett er in the password');
             return;
         }
 
-        if(password.length < 6){
+        if (password.length < 6) {
             setPassError('Length must be at least 6 character')
             return;
         }
@@ -45,23 +46,33 @@ const Register = () => {
         //     return;
         // }
 
-        
+
         setPassError('')
 
-        createUser(email, password,photo)
-        .then(result=>{
-            console.log(result.user)
-            e.target.reset()
-            toast.success('Register Successfully')
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+        createUser(email, password)
+            .then(result => {
+                updateUserProfile(name, photo)
+                    .then(() => {
+                        // console.log()
+                        setAutoUpdate(true)
+
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+
+                console.log(result.user)
+                e.target.reset()
+                toast.success('Register Successfully')
+            })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
 
 
-    
+
 
 
 
@@ -94,7 +105,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name="photoUrl" placeholder="URL" className="input input-bordered"  />
+                                <input type="text" name="photoUrl" placeholder="URL" className="input input-bordered" required/>
                             </div>
                             <div className="form-control">
                                 <label className="label">

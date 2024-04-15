@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase.config";
 
@@ -8,11 +8,22 @@ const ContextComponent = ({ children }) => {
     const [user, setUser] = useState(null)
     const [userData, setUserData] = useState([]);
     const [loading, setLoading] = useState(true)
+    const [autoUpdate, setAutoUpdate] = useState(false)
 
-
+    // create user
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
+
+    // update user profile
+    const updateUserProfile = (name, image) =>{
+        return updateProfile(auth.currentUser, {
+            displayName: name, 
+            photoURL: image
+          })
+    }
+
+
 
 
     // login 
@@ -64,11 +75,11 @@ const ContextComponent = ({ children }) => {
         return () =>{
             unSubscribe();
         }
-    },[])
+    },[autoUpdate])
 
 
 
-    const passValue = { user,userData,loading,createUser, userLogin, googleLogin,logOut, gitHubLogin }
+    const passValue = { user,userData,loading,createUser, userLogin, googleLogin,logOut, gitHubLogin, updateUserProfile,setAutoUpdate }
 
     return (
         <div>

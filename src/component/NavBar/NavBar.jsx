@@ -53,15 +53,15 @@ const NavBar = () => {
                 {
                     user ?
                         <>
-                            <div className="tooltip tooltip-left" data-tip={user.displayName}>
-                                <img className={`rounded-full h-10 w-10  `} src={user.photoURL} alt="" />
+                            <div className="tooltip tooltip-left " data-tip={user.displayName}>
+                                <img className={`rounded-full h-10 w-10  `} src={user?.photoURL || 'https://ibb.co/WxjPyWc'} alt="" />
+                                
                             </div>
-                            <button className="btn" onClick={handleSignOut}>Log out</button>
+                            <button className="btn ml-6" onClick={handleSignOut}>Log out</button>
                         </>
                         :
                         <Link to={'/login'} className="btn">Login</Link>
                 }
-
             </div>
         </div>
     );
