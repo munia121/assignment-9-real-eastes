@@ -4,6 +4,7 @@ import { AuthContext } from "../../ContexComponent/ContextComponent";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -78,6 +79,9 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Register Page</title>
+            </Helmet>
             <div className="hero   min-h-screen">
                 <div className="hero-content flex-col ">
                     <div className="text-center ">

@@ -7,6 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -87,6 +88,9 @@ const Login = () => {
 
     return (
         <div className="p-4">
+            <Helmet>
+                <title>Login Page</title>
+            </Helmet>
             <div className="hero  min-h-screen">
                 <div className=" flex-col ">
                     <div className="text-center ">

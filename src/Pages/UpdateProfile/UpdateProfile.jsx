@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const {updateUserProfile, setAutoUpdate, user} = useContext(AuthContext)
@@ -34,6 +35,9 @@ const UpdateProfile = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>updateProfile</title>
+            </Helmet>
             <h2 className="text-4xl mt-20 text-center font-bold">Update Your Profile</h2>
             <div className=" border mt-10 p-8 lg:w-[800px] mx-auto">
                 <form onSubmit={updateSubmit} className="">

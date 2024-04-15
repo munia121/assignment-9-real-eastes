@@ -5,14 +5,16 @@ import { Navigation } from 'swiper/modules';
 import { FaArrowRight } from "react-icons/fa6";
 import 'animate.css';
 import EastetCards from './EastetCards';
+import { Helmet } from 'react-helmet-async';
 
 
 
 const Home = () => {
     return (
         <div className="mt-10">
-
-
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Swiper
                 navigation={true}
                 loop={true}
