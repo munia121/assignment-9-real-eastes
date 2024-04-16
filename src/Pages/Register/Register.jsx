@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
-    const navigate = useNavigate()
-    const loaction = useLocation()
+    // const navigate = useNavigate()
+    // const loaction = useLocation()
 
     const { createUser,updateUserProfile,setAutoUpdate } = useContext(AuthContext);
 

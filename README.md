@@ -1,8 +1,27 @@
-# React + Vite
+**Website Name: HomeHaven**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live site url:**
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive Property Search: Easily search for residential properties based on location, price range, size, and other criteria through our intuitive search interface.
+
+- Detailed Property Listings: Each property listing provides comprehensive details including photos, floor plans, amenities, and neighborhood information to help users make informed decisions.
+
+- Virtual Tours: Experience properties from the comfort of your own home with our immersive virtual tours, allowing you to explore every room and corner.
+
+- Saved Favorites: Create an account to save your favorite properties for quick access later, making it easier to compare and revisit your top choices.
+
+- Responsive Design: Our website is optimized for mobile devices, ensuring a seamless browsing experience whether you're using a smartphone, tablet, or desktop computer.
+
+
+**Npm package**
+a. [AOS Package](https://michalsnik.github.io/aos/)
+b. [Animate.css](https://animate.style/)
+e. [Swiper slider](https://swiperjs.com/demos)
+
+
+
+
+
+
+

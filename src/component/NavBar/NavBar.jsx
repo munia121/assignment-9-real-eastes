@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 
 const NavBar = () => {
-    const { logOut, user, loading} = useContext(AuthContext);
+    const { logOut, user} = useContext(AuthContext);
 
 
     

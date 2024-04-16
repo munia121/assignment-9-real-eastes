@@ -76,7 +76,7 @@ const Login = () => {
         gitHubLogin()
             .then(result => {
                 console.log(result.user)
-                navigate(location?.state? location.state: '/')
+                // navigate(location?.state? location.state: '/')
                 
             })
             .catch(error => {
