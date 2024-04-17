@@ -1,6 +1,6 @@
 **Website Name: HomeHaven**
 
-**Live site url:**
+**Live site url: https://sage-daifuku-641ed8.netlify.app/**
 
 
 - Interactive Property Search: Easily search for residential properties based on location, price range, size, and other criteria through our intuitive search interface.
@@ -17,7 +17,7 @@
 **Npm package**
 a. [AOS Package](https://michalsnik.github.io/aos/)
 b. [Animate.css](https://animate.style/)
-e. [Swiper slider](https://swiperjs.com/demos)
+c. [Swiper slider](https://swiperjs.com/demos)
 
 
 
