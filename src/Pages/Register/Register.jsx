@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     // const loaction = useLocation()
 
     const { createUser,updateUserProfile,setAutoUpdate } = useContext(AuthContext);
@@ -82,6 +82,7 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
+                
                 updateUserProfile(name, photo)
                     .then(() => {
                         // console.log()
@@ -95,6 +96,7 @@ const Register = () => {
                 console.log(result.user)
                 e.target.reset()
                 toast.success('Register Successfully')
+                navigate(location?.state? location.state: '/')
             })
             .catch(error => {
                 console.log(error)

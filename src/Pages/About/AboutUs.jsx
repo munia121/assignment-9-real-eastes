@@ -2,6 +2,7 @@ import { LuPhoneCall } from "react-icons/lu";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
 import { TbClockHour3 } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -9,6 +10,9 @@ import { TbClockHour3 } from "react-icons/tb";
 const AboutUs = () => {
     return (
         <div>
+            <Helmet>
+                <title>Contact us</title>
+            </Helmet>
             <div className="mt-20">
                 <h1 className="text-5xl font-bold text-center">Contact Us</h1>
             </div>

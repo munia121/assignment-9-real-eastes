@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../ContexComponent/ContextComponent";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const CardDetails = () => {
@@ -17,7 +18,9 @@ const CardDetails = () => {
 
     return (
         <div className="mt-20">
-            
+            <Helmet>
+                <title>Details pages</title>
+            </Helmet>
             <div className="hero ">
                 <div className="hero-content flex-col lg:flex-row">
                     <img data-aos="zoom-in" data-aos-duration= "1000" src={data.image_url} className="lg:w-[700px] rounded-lg shadow-2xl " />
