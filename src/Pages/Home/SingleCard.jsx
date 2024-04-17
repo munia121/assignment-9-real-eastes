@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const SingleCard = ({ data }) => {
     // eslint-disable-next-line no-unused-vars
-    const {id,image_url,estate_title,description} = data;
+    const {id,image_url,estate_title,description, area} = data;
     return (
         <div>
-            <div className=" p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
-                <img data-aos="zoom-in" data-aos-duration='1000'  src={image_url} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500 hover:"   />
-
+            <div className=" relative p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+                <img data-aos="zoom-in" data-aos-duration='1000'  src={image_url} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"   />
+                <p className="absolute top-8 bg-white px-2 rounded-lg opacity-70">{area}</p>
                 
                 <div className="mt-6 mb-2">
                     
