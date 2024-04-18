@@ -15,9 +15,9 @@
 
 
 **Npm package**
-a. [AOS Package](https://michalsnik.github.io/aos/)
-b. [Animate.css](https://animate.style/)
-c. [Swiper slider](https://swiperjs.com/demos)
+- [AOS Package](https://michalsnik.github.io/aos/)
+- [Animate.css](https://animate.style/)
+- [Swiper slider](https://swiperjs.com/demos)
 
 
 
