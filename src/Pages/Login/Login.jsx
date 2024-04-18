@@ -51,8 +51,8 @@ const Login = () => {
             })
             // eslint-disable-next-line no-unused-vars
             .catch(error => {
-                setError('invalid password')
-                toast.warn("Invalid password")
+                setError('invalid password or email')
+                toast.warn("Invalid password or email")
             })
 
     }
